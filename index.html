@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Globale Visa, centre de langues et immigration | Yaoundé</title>
-<meta name="description" content="Globale Visa, centre de formation en langue allemande à Yaoundé (Tsinga & Jouvence). Cours A1 à C1, préparation Goethe, telc, TestDaF, accompagnement immigration et visa.">
+<title>Globale Visa | Centre de langues & immigration à Yaoundé — Allemagne, Canada, France, Chine</title>
+<meta name="description" content="Globale Visa, centre de langues et d'immigration à Yaoundé (Tsinga & Jouvence). Cours d'allemand A1 à C1 (Goethe, telc, ÖSD), préparation au TCF Canada, visa travail Allemagne, bourses et accompagnement études vers l'Allemagne, le Canada, la France et la Chine.">
+<link rel="canonical" href="https://globalevisagroup.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Globale Visa | Centre de langues & immigration à Yaoundé">
+<meta property="og:description" content="Cours d'allemand A1 à C1, préparation TCF Canada, visa travail Allemagne, bourses et accompagnement études vers l'Allemagne, le Canada, la France et la Chine.">
+<meta property="og:url" content="https://globalevisagroup.com/">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#122a63">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -87,10 +94,42 @@ h3{font-size:1.35rem;font-weight:600}
 .btn-light{background:rgba(255,255,255,.12);color:#fff;border:1.6px solid rgba(255,255,255,.3)}
 .btn-light:hover{background:rgba(255,255,255,.2);transform:translateY(-3px)}
 
+/* ====================== PROMO BAR ====================== */
+:root{--promo-h:46px}
+.promo-bar{
+  position:fixed;top:0;left:0;right:0;z-index:102;height:var(--promo-h);
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:0 48px 0 18px;text-align:center;
+  background:linear-gradient(90deg,var(--gold-deep),var(--gold) 45%,var(--gold-bright));
+  color:var(--navy-900);font-weight:700;font-size:.86rem;letter-spacing:.01em;
+  box-shadow:0 4px 18px -10px rgba(201,138,0,.8);
+}
+.promo-bar .promo-txt{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.promo-bar .promo-txt svg{width:16px;height:16px;flex-shrink:0}
+.promo-bar .cd{
+  display:inline-flex;align-items:center;gap:6px;background:var(--navy-900);color:var(--gold-bright);
+  padding:3px 11px;border-radius:100px;font-size:.8rem;font-weight:800;letter-spacing:.02em;
+}
+.promo-bar .promo-link{text-decoration:underline;text-underline-offset:2px;cursor:pointer;white-space:nowrap}
+.promo-close{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border:none;border-radius:50%;cursor:pointer;
+  background:rgba(8,18,48,.12);color:var(--navy-900);display:grid;place-items:center;transition:background .2s}
+.promo-close:hover{background:rgba(8,18,48,.24)}
+.promo-close svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.6}
+body.no-promo .promo-bar{display:none}
+body.no-promo .nav{top:0}
+body.no-promo .nav.scrolled{top:0}
+@media(max-width:600px){
+  .promo-bar{font-size:.74rem;padding:0 40px 0 12px}
+  .promo-bar .promo-link{display:none}
+  :root{--promo-h:42px}
+}
+
 /* ====================== NAV ====================== */
 .nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:18px 0;transition:padding .3s,background .3s,box-shadow .3s,backdrop-filter .3s;
+  position:fixed;top:var(--promo-h);left:0;right:0;z-index:100;
+  padding:18px 0;transition:padding .3s,background .3s,box-shadow .3s,backdrop-filter .3s,top .3s;
 }
 .nav.scrolled{
   padding:11px 0;background:rgba(248,245,238,.86);
@@ -420,6 +459,74 @@ footer .wrap{position:relative;z-index:2}
 .de-panel .sky{width:100%;height:auto;display:block}
 @media(max-width:640px){.de-cap h3{font-size:1.2rem}.de-cap{padding-top:28px}}
 
+/* ====================== DESTINATIONS ====================== */
+.dest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.dest{
+  position:relative;border-radius:var(--r);overflow:hidden;min-height:260px;
+  background:linear-gradient(160deg,var(--navy),var(--navy-800));color:#fff;
+  border:1px solid var(--line-soft);box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:26px;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.dest:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.dest .flag{position:absolute;top:0;left:0;right:0;height:7px;display:flex;z-index:3}
+.dest .flag i{flex:1}
+.dest .glowc{position:absolute;width:200px;height:200px;border-radius:50%;top:-70px;right:-60px;
+  background:radial-gradient(circle,rgba(243,181,11,.22),transparent 65%)}
+.dest .ctry{font-family:var(--ff-display);font-size:1.5rem;font-weight:600;color:#fff;position:relative;z-index:2}
+.dest .tagd{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:auto;position:relative;z-index:2}
+.dest p{color:#c4cef0;font-size:.92rem;margin-top:10px;position:relative;z-index:2}
+
+/* ====================== PARTENAIRES ====================== */
+.partners-band{background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.partners{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:stretch}
+.partner{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:#fff;border:1px solid var(--line-soft);
+  border-radius:var(--r-sm);padding:26px 28px;min-width:230px;flex:1 1 230px;max-width:300px;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.partner:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:var(--shadow)}
+.partner .logo{height:56px;width:auto;max-width:100%;display:block}
+.partner small{color:var(--muted);font-size:.82rem;text-align:center;font-weight:500}
+
+/* ====================== GERMANPASS ====================== */
+.gp-logo-lg{height:64px;width:auto;margin-bottom:22px}
+.gp-skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.gp-skill{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:var(--r);padding:28px 26px;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
+.gp-skill:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.gp-skill .de{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;color:var(--navy)}
+.gp-skill .fr{font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+.gp-skill p{color:var(--muted);font-size:.92rem}
+.gp-skill .ic{width:46px;height:46px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center;margin-bottom:16px}
+.gp-skill .ic svg{width:23px;height:23px;stroke:var(--gold-deep);fill:none;stroke-width:1.9}
+
+/* mini dashboard */
+.gp-dash{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:var(--r);padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.gp-dash h4{font-family:var(--ff-display);color:var(--navy);font-size:1.1rem;margin-bottom:4px}
+.gp-dash .sub{color:var(--muted);font-size:.85rem;margin-bottom:22px}
+.gp-bar{margin-bottom:16px}
+.gp-bar .row{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.gp-bar .track{height:9px;border-radius:100px;background:var(--line-soft);overflow:hidden}
+.gp-bar .fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--gold-deep),var(--gold))}
+.gp-bar.locked .row{color:var(--muted)}
+.gp-bar.locked .fill{background:var(--line)}
+.gp-ring{display:flex;align-items:center;gap:16px;margin-top:8px;padding-top:18px;border-top:1px solid var(--line-soft)}
+.gp-ring .big{font-family:var(--ff-display);font-size:2rem;color:var(--navy);line-height:1}
+.gp-ring .big span{color:var(--gold-deep)}
+.gp-ring small{color:var(--muted);font-size:.85rem}
+
+/* plans */
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:760px;margin:0 auto}
+.plan{background:var(--paper-2);border:1.5px solid var(--line);border-radius:var(--r);padding:32px 30px;position:relative}
+.plan.featured{border-color:var(--gold);box-shadow:var(--shadow-gold)}
+.plan .ptag{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.plan h3{font-size:1.5rem;margin:6px 0 14px}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:6px}
+.plan li{display:flex;gap:10px;align-items:flex-start;font-size:.94rem;color:var(--ink)}
+.plan li svg{width:18px;height:18px;stroke:var(--gold-deep);flex-shrink:0;margin-top:3px;fill:none;stroke-width:2.4}
+.plan .ribbon{position:absolute;top:18px;right:18px;background:var(--gold);color:var(--navy-900);font-size:.7rem;font-weight:800;letter-spacing:.08em;padding:5px 11px;border-radius:100px}
+
 /* ====================== WHATSAPP FLOAT ====================== */
 .wa-float{position:fixed;bottom:26px;right:26px;z-index:90;width:60px;height:60px;border-radius:50%;
   background:#25d366;display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.6);
@@ -431,6 +538,19 @@ footer .wrap{position:relative;z-index:2}
 </style>
 </head>
 <body>
+
+<!-- ====== BANDEAU PROMO ====== -->
+<div class="promo-bar" id="promoBar" role="region" aria-label="Offre spéciale">
+  <div class="promo-txt">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 0 1-5.8-1.6"/></svg>
+    <span><strong>Offre spéciale&nbsp;: −15&nbsp;%</strong> sur toute inscription avant le 30&nbsp;juin&nbsp;!</span>
+    <span class="cd" id="promoCd">J‑</span>
+    <span class="promo-link" onclick="go('contact')">J'en profite →</span>
+  </div>
+  <button class="promo-close" id="promoClose" aria-label="Fermer l'offre">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
 
 <!-- ====== NAV ====== -->
 <nav class="nav" id="nav">
@@ -451,6 +571,7 @@ footer .wrap{position:relative;z-index:2}
     <div class="nav-links" id="navLinks">
       <span class="nav-link active" data-p="accueil" onclick="go('accueil')">Accueil</span>
       <span class="nav-link" data-p="formations" onclick="go('formations')">Formations</span>
+      <span class="nav-link" data-p="germanpass" onclick="go('germanpass')">GermanPass</span>
       <span class="nav-link" data-p="apropos" onclick="go('apropos')">À propos</span>
       <span class="nav-link" data-p="contact" onclick="go('contact')">Contact</span>
     </div>
@@ -465,6 +586,7 @@ footer .wrap{position:relative;z-index:2}
 <aside class="mobile-menu" id="mobileMenu">
   <a class="active" data-p="accueil" onclick="go('accueil')">Accueil</a>
   <a data-p="formations" onclick="go('formations')">Formations</a>
+  <a data-p="germanpass" onclick="go('germanpass')">GermanPass</a>
   <a data-p="apropos" onclick="go('apropos')">À propos</a>
   <a data-p="contact" onclick="go('contact')">Contact</a>
   <button class="btn btn-gold" onclick="go('contact')">Test de niveau gratuit</button>
@@ -486,18 +608,19 @@ footer .wrap{position:relative;z-index:2}
     <div class="wrap">
       <div class="hero-copy">
         <span class="hero-badge anim d1"><span class="dot"></span>Centre de langues &amp; immigration · Yaoundé</span>
-        <h1 class="anim d2">Maîtrisez l'allemand,<br>réalisez votre <em>projet d'avenir</em>.</h1>
-        <p class="sub anim d3">Globale Visa vous accompagne, du premier mot d'allemand jusqu'à votre installation en Allemagne : cours certifiants, préparation aux examens officiels et accompagnement visa.</p>
+        <h1 class="anim d2">Étudier, travailler, vivre à l'étranger&nbsp;:<br>votre <em>avenir sans frontières</em>.</h1>
+        <p class="sub anim d3">Globale Visa vous accompagne à chaque étape : cours d'allemand A1 à C1, préparation au TCF Canada, accompagnement études, bourses et visa vers l'Allemagne, le Canada, la France et la Chine.</p>
         <div class="hero-actions anim d4">
           <button class="btn btn-gold" onclick="go('contact')">Réserver mon test de niveau
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button class="btn btn-light" onclick="go('formations')">Voir les formations</button>
+          <button class="btn btn-light" onclick="go('formations')">Voir les programmes</button>
         </div>
         <div class="hero-trust anim d5">
-          <span>Préparation aux examens :</span>
+          <span>Examens préparés :</span>
           <span class="pill">Goethe-Zertifikat</span>
           <span class="pill">telc</span>
-          <span class="pill">TestDaF</span>
+          <span class="pill">ÖSD</span>
+          <span class="pill">TCF Canada</span>
         </div>
       </div>
       <div class="hero-visual anim d4">
@@ -519,8 +642,8 @@ footer .wrap{position:relative;z-index:2}
           <div><b>Niveaux A1 → C1</b><small>Du débutant à l'autonomie</small></div>
         </div>
         <div class="hero-card c2">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V5z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <div><b>Accompagnement visa</b><small>Un projet, de A à Z</small></div>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+          <div><b>4 destinations</b><small>Allemagne · Canada · France · Chine</small></div>
         </div>
       </div>
     </div>
@@ -529,9 +652,9 @@ footer .wrap{position:relative;z-index:2}
   <!-- STATS -->
   <div class="stats">
     <div class="wrap">
-      <div class="stat reveal"><div class="num">A1<span>→</span>C1</div><div class="lbl">Tous les niveaux du CECRL</div></div>
+      <div class="stat reveal"><div class="num">A1<span>→</span>C1</div><div class="lbl">Tous les niveaux d'allemand (CECRL)</div></div>
+      <div class="stat reveal"><div class="num">4</div><div class="lbl">Destinations : Allemagne, Canada, France, Chine</div></div>
       <div class="stat reveal"><div class="num">2</div><div class="lbl">Centres à Yaoundé : Tsinga &amp; Jouvence</div></div>
-      <div class="stat reveal"><div class="num">3</div><div class="lbl">Examens préparés : Goethe, telc, TestDaF</div></div>
       <div class="stat reveal"><div class="num">100<span>%</span></div><div class="lbl">En ligne &amp; en présentiel</div></div>
     </div>
   </div>
@@ -541,33 +664,106 @@ footer .wrap{position:relative;z-index:2}
     <div class="wrap">
       <div class="head reveal">
         <span class="eyebrow">Nos services</span>
-        <h2>Tout votre parcours vers l'Allemagne, au même endroit</h2>
-        <p class="lead">De l'apprentissage de la langue à l'obtention du visa, nous réunissons l'expertise dont vous avez besoin pour réussir.</p>
+        <h2>Des services complets pour réaliser vos ambitions</h2>
+        <p class="lead">De l'apprentissage de la langue à l'obtention du visa, nous réunissons sous un même toit l'expertise dont vous avez besoin pour étudier, travailler ou vous installer à l'étranger.</p>
       </div>
       <div class="cards">
         <div class="card reveal">
           <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
           <h3>Cours d'allemand A1 à C1</h3>
-          <p>Des cours structurés et progressifs, animés par des formateurs expérimentés, pour parler allemand avec aisance et confiance.</p>
+          <p>Méthodes modernes et formateurs qualifiés pour une progression garantie, avec préparation aux certifications Goethe, telc et ÖSD.</p>
           <span class="more" onclick="go('formations')">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="card reveal">
           <span class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-          <h3>Préparation aux examens</h3>
-          <p>Goethe-Zertifikat, telc et TestDaF : entraînement ciblé, examens blancs et stratégies pour décrocher votre certification.</p>
+          <h3>Préparation au TCF Canada</h3>
+          <p>Préparation complète, entraînements intensifs et examens blancs, avec conseils et suivi personnalisé pour maximiser vos chances d'immigration.</p>
           <span class="more" onclick="go('formations')">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="card reveal">
-          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V5z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <h3>Accompagnement immigration &amp; visa</h3>
-          <p>Conseil et préparation du dossier : études, formation ou travail. Nous vous guidons à chaque étape de votre projet en Allemagne.</p>
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="m2 12 4-2v6l-4 2zM18 4l4 2v14l-4-2zM6 10l12-6M6 16l12 6M6 10v6M18 4v14"/></svg></span>
+          <h3>Études &amp; bourses à l'étranger</h3>
+          <p>Conseils personnalisés, constitution du dossier et suivi jusqu'à l'obtention du visa. Aide à l'admission et bourses d'études disponibles.</p>
           <span class="more" onclick="go('formations')">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="card reveal">
-          <span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-          <h3>En ligne &amp; en présentiel</h3>
-          <p>Apprenez où vous voulez : en classe dans nos centres de Tsinga et Jouvence, ou à distance avec le même suivi pédagogique.</p>
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
+          <h3>Visa travail Allemagne</h3>
+          <p>Opportunités de carrières, dossiers solides et accompagnement jusqu'à l'obtention du visa de travail en Allemagne.</p>
           <span class="more" onclick="go('formations')">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <div class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Destinations phares</span>
+        <h2>Quatre pays, un même accompagnement</h2>
+        <p class="lead">Où que vous rêviez d'aller, nous préparons votre langue, votre dossier et votre visa.</p>
+      </div>
+      <div class="dest-grid">
+        <div class="dest reveal">
+          <div class="flag"><i style="background:#161616"></i><i style="background:#d11b1b"></i><i style="background:#f3b50b"></i></div>
+          <div class="glowc"></div>
+          <span class="tagd">Pilier historique</span>
+          <span class="ctry">Allemagne</span>
+          <p>Études reconnues, Ausbildung, emploi qualifié et visa travail. Notre spécialité.</p>
+        </div>
+        <div class="dest reveal">
+          <div class="flag"><i style="background:#d52b1e"></i><i style="background:#fff"></i><i style="background:#d52b1e"></i></div>
+          <div class="glowc"></div>
+          <span class="tagd">Immigration francophone</span>
+          <span class="ctry">Canada</span>
+          <p>Préparation au TCF Canada et accompagnement de votre projet d'études ou d'immigration.</p>
+        </div>
+        <div class="dest reveal">
+          <div class="flag"><i style="background:#0055a4"></i><i style="background:#fff"></i><i style="background:#ef4135"></i></div>
+          <div class="glowc"></div>
+          <span class="tagd">Études supérieures</span>
+          <span class="ctry">France</span>
+          <p>Admission, dossier et visa d'études pour rejoindre les universités et écoles françaises.</p>
+        </div>
+        <div class="dest reveal">
+          <div class="flag"><i style="background:#de2910"></i><i style="background:#ffde00"></i><i style="background:#de2910"></i></div>
+          <div class="glowc"></div>
+          <span class="tagd">Bourses &amp; opportunités</span>
+          <span class="ctry">Chine</span>
+          <p>Programmes d'études et bourses pour découvrir une destination en pleine croissance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEASER GERMANPASS -->
+  <div class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <svg class="lines" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1200" height="300" fill="url(#grid2)"/></svg>
+        <div class="inner">
+          <div style="max-width:48ch">
+            <span class="eyebrow light">Notre plateforme</span>
+            <svg style="height:50px;width:auto;margin:6px 0 16px" viewBox="0 0 340 80" role="img" aria-label="GermanPass">
+              <defs><clipPath id="gp-teaser-shield"><path d="M10 18 Q10 8 24 8 L52 8 Q66 8 66 18 L66 42 Q66 60 38 72 Q10 60 10 42 Z"/></clipPath></defs>
+              <g clip-path="url(#gp-teaser-shield)"><rect x="6" y="6" width="64" height="23" fill="#000000"/><rect x="6" y="29" width="64" height="20" fill="#DD0000"/><rect x="6" y="49" width="64" height="28" fill="#FFCE00"/></g>
+              <path d="M22 39 L33 50 L54 27" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="82" y="53" font-family="'Hanken Grotesk',Arial,sans-serif" font-weight="800" font-size="40"><tspan fill="#ffffff">German</tspan><tspan fill="#ff6b6b">Pass</tspan></text>
+            </svg>
+            <h2 style="color:#fff">Préparez votre examen d'allemand en ligne</h2>
+            <p>Cours du niveau A1 au C2, entraînement aux quatre compétences corrigé par IA et suivi personnalisé de votre progression — la plateforme tout-en-un de Globale Visa.</p>
+            <button class="btn btn-gold" style="margin-top:24px" onclick="go('germanpass')">Découvrir GermanPass
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="gp-dash" style="min-width:280px;max-width:340px;flex:1">
+            <h4>Ma progression</h4>
+            <div class="sub">Score moyen par compétence</div>
+            <div class="gp-bar"><div class="row"><span>Lesen</span><span>82&nbsp;%</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+            <div class="gp-bar"><div class="row"><span>Hören</span><span>76&nbsp;%</span></div><div class="track"><div class="fill" style="width:76%"></div></div></div>
+            <div class="gp-bar"><div class="row"><span>Schreiben</span><span>68&nbsp;%</span></div><div class="track"><div class="fill" style="width:68%"></div></div></div>
+            <div class="gp-ring"><div class="big">72<span>%</span></div><small>Objectif&nbsp;: 70&nbsp;% pour débloquer le niveau suivant.</small></div>
+          </div>
         </div>
       </div>
     </div>
@@ -586,7 +782,7 @@ footer .wrap{position:relative;z-index:2}
           </div>
           <div class="why-item reveal">
             <span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <div><h3>Méthode orientée examen</h3><p>Chaque cours prépare concrètement aux certifications Goethe, telc et TestDaF.</p></div>
+            <div><h3>Méthode orientée examen</h3><p>Chaque cours prépare concrètement aux certifications Goethe, telc et ÖSD (et au TCF Canada).</p></div>
           </div>
           <div class="why-item reveal">
             <span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -746,7 +942,7 @@ footer .wrap{position:relative;z-index:2}
       <div class="steps">
         <div class="step reveal"><div class="n">1</div><h3>Test de niveau</h3><p>Évaluation gratuite pour définir votre point de départ et vos objectifs.</p></div>
         <div class="step reveal"><div class="n">2</div><h3>Formation</h3><p>Cours progressifs A1 à C1, en groupe ou individuel, en ligne ou en présentiel.</p></div>
-        <div class="step reveal"><div class="n">3</div><h3>Certification</h3><p>Préparation et passage de l'examen officiel : Goethe, telc ou TestDaF.</p></div>
+        <div class="step reveal"><div class="n">3</div><h3>Certification</h3><p>Préparation et passage de l'examen officiel : Goethe, telc, ÖSD ou TCF Canada.</p></div>
         <div class="step reveal"><div class="n">4</div><h3>Visa &amp; départ</h3><p>Accompagnement de votre dossier d'immigration jusqu'à votre installation.</p></div>
       </div>
     </div>
@@ -780,8 +976,60 @@ footer .wrap{position:relative;z-index:2}
     </div>
   </div>
 
+  <!-- PARTENAIRES -->
+  <div class="section partners-band">
+    <div class="wrap">
+      <div class="head center reveal" style="margin-bottom:38px">
+        <span class="eyebrow">En partenariat avec</span>
+        <h2>Des partenaires solides pour aller plus loin</h2>
+      </div>
+      <div class="partners">
+        <div class="partner reveal">
+          <svg class="logo" viewBox="0 0 300 80" role="img" aria-label="Timo Scolar Orientation">
+            <!-- bulbe -->
+            <circle cx="42" cy="44" r="16" fill="#fff" stroke="#2E3192" stroke-width="4"/>
+            <!-- cerveau (vert) -->
+            <g fill="none" stroke="#66BB46" stroke-width="2.4">
+              <path d="M42 36v18"/>
+              <path d="M42 38c-6 0-8 4-8 7s2 6 6 7"/>
+              <path d="M42 38c6 0 8 4 8 7s-2 6-6 7"/>
+            </g>
+            <!-- col de l'ampoule -->
+            <rect x="37" y="58" width="10" height="5" fill="#2E3192"/>
+            <!-- toque -->
+            <polygon points="10,24 42,11 74,24 42,37" fill="#2E3192"/>
+            <path d="M74 24v10" stroke="#66BB46" stroke-width="3" fill="none"/>
+            <circle cx="74" cy="36" r="3" fill="#66BB46"/>
+            <!-- livre ouvert -->
+            <path d="M6 60 L40 54 V70 L6 66 Z" fill="#fff" stroke="#2E3192" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M78 60 L44 54 V70 L78 66 Z" fill="#fff" stroke="#2E3192" stroke-width="3" stroke-linejoin="round"/>
+            <!-- texte -->
+            <text x="92" y="42" font-family="'Hanken Grotesk',Arial,sans-serif" font-weight="800" font-size="27"><tspan fill="#2E3192">TIMO</tspan><tspan fill="#66BB46"> SCOLAR</tspan></text>
+            <text x="93" y="64" font-family="'Hanken Grotesk',Arial,sans-serif" font-weight="700" font-size="15" letter-spacing="3.5" fill="#2E3192">ORIENTATION</text>
+          </svg>
+          <small>Orientation scolaire &amp; académique</small>
+        </div>
+        <div class="partner reveal">
+          <svg class="logo" viewBox="0 0 210 80" role="img" aria-label="YOC Auto-école">
+            <!-- volant -->
+            <circle cx="40" cy="40" r="26" fill="none" stroke="#159FDB" stroke-width="6"/>
+            <circle cx="40" cy="40" r="8" fill="#159FDB"/>
+            <g stroke="#159FDB" stroke-width="6" stroke-linecap="round">
+              <line x1="40" y1="34" x2="40" y2="16"/>
+              <line x1="34.8" y1="44.5" x2="19" y2="53"/>
+              <line x1="45.2" y1="44.5" x2="61" y2="53"/>
+            </g>
+            <text x="80" y="40" font-family="'Hanken Grotesk',Arial,sans-serif" font-weight="800" font-size="30" fill="#159FDB">YOC</text>
+            <text x="80" y="66" font-family="'Hanken Grotesk',Arial,sans-serif" font-weight="800" font-size="22" fill="#F7941D">Auto-école</text>
+          </svg>
+          <small>Permis de conduire &amp; mobilité</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA -->
-  <div class="wrap" style="padding-bottom:96px">
+  <div class="wrap" style="padding:96px 28px">
     <div class="cta-band reveal">
       <svg class="lines" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs><pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.06)"/></pattern></defs>
@@ -809,8 +1057,8 @@ footer .wrap{position:relative;z-index:2}
     </svg>
     <div class="wrap">
       <div class="crumb">Accueil · Formations</div>
-      <h1>Nos formations en allemand</h1>
-      <p>Un programme complet, du niveau débutant à l'autonomie, avec préparation aux examens officiels et formats flexibles adaptés à votre emploi du temps.</p>
+      <h1>Nos formations &amp; programmes</h1>
+      <p>Cours d'allemand A1 à C1, préparation au TCF Canada, accompagnement études et visa travail Allemagne : un parcours complet, du premier cours jusqu'à votre départ.</p>
     </div>
   </div>
 
@@ -838,15 +1086,44 @@ footer .wrap{position:relative;z-index:2}
       <div class="head reveal">
         <span class="eyebrow">Certifications</span>
         <h2>Préparation aux examens officiels</h2>
-        <p class="lead">Nous vous entraînons aux trois certifications reconnues pour les études, le travail et l'immigration en Allemagne.</p>
+        <p class="lead">Nous vous entraînons aux certifications reconnues pour les études, le travail et l'immigration : Goethe-Zertifikat, telc Deutsch et ÖSD Zertifikat (et TestDaF pour l'université).</p>
       </div>
       <div class="exam-grid">
         <div class="exam reveal"><div class="ring"></div><div class="badge">Institut Goethe</div><h3>Goethe-Zertifikat</h3><p>La certification de référence de l'Institut Goethe, reconnue dans le monde entier.</p>
           <ul><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Niveaux A1 à C1</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Examens blancs réguliers</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Stratégies pour chaque épreuve</li></ul></div>
         <div class="exam reveal"><div class="ring"></div><div class="badge">telc GmbH</div><h3>telc Deutsch</h3><p>Certifications standardisées, appréciées pour les démarches d'immigration et professionnelles.</p>
           <ul><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Formats adaptés à vos objectifs</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Entraînement intensif</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Correction personnalisée</li></ul></div>
-        <div class="exam reveal"><div class="ring"></div><div class="badge">Universités</div><h3>TestDaF</h3><p>L'examen indispensable pour intégrer une université allemande.</p>
-          <ul><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Préparation académique ciblée</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Compréhension &amp; expression écrites</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Simulations d'examen</li></ul></div>
+        <div class="exam reveal"><div class="ring"></div><div class="badge">ÖSD · Autriche</div><h3>ÖSD Zertifikat</h3><p>Le diplôme officiel de la langue allemande, reconnu pour l'immigration, les études et le travail (TestDaF également préparé pour l'université).</p>
+          <ul><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Niveaux A1 à C1</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Préparation académique ciblée</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Simulations d'examen</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TCF CANADA -->
+  <div class="section" style="padding-top:0">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow reveal">Cap sur le Canada</span>
+        <h2 class="reveal" style="margin-bottom:18px">Préparation complète au TCF Canada</h2>
+        <p class="lead reveal" style="margin-bottom:26px">Le Test de connaissance du français (TCF Canada) est une étape clé de votre projet d'immigration. Nous vous y préparons de façon intensive et personnalisée pour maximiser votre score.</p>
+        <div class="why-list">
+          <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Préparation complète</h3><p>Les quatre épreuves couvertes : compréhension et expression, orale et écrite.</p></div></div>
+          <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Entraînements intensifs &amp; examens blancs</h3><p>Mises en situation réelles et corrections détaillées pour progresser vite.</p></div></div>
+          <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Conseils &amp; suivi personnalisé</h3><p>Une stratégie adaptée à votre niveau et à votre objectif d'immigration.</p></div></div>
+        </div>
+        <button class="btn btn-gold reveal" style="margin-top:28px" onclick="go('contact')">Préparer mon TCF Canada
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="why-visual reveal" style="min-height:360px;background:radial-gradient(120% 120% at 70% 20%,#b3252b,#7c1418 55%,#4a0c0f)">
+        <svg class="lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <circle cx="320" cy="80" r="150" fill="none" stroke="rgba(255,255,255,.12)"/>
+          <circle cx="320" cy="80" r="90" fill="none" stroke="rgba(255,255,255,.1)"/>
+        </svg>
+        <div class="q">
+          <svg viewBox="0 0 24 24" width="56" height="56" fill="#fff" style="margin-bottom:14px" aria-hidden="true"><path d="M12 2l1.6 4.8 4.9-.4-3.6 3.4 1.8 4.6L12 16l-4.7 2.8 1.8-4.6-3.6-3.4 4.9.4z" opacity=".0"/><path d="M12 3c.6 2 .2 3.4-.6 4.4.9-.2 1.7-.8 2.3-1.7.1 1.3-.2 2.4-.8 3.2 1.4.3 2.5 0 3.5-.8-.3 1.5-1.1 2.5-2.2 3.1l3.5.7-1.6 1.1.5 1.9-2.9-1V18h-1.4v-1.8l-2.9 1 .5-1.9L8 14.2l3.5-.7c-1.1-.6-1.9-1.6-2.2-3.1 1 .8 2.1 1.1 3.5.8-.6-.8-.9-1.9-.8-3.2.6.9 1.4 1.5 2.3 1.7-.8-1-1.2-2.4-.6-4.4z"/></svg>
+          <p style="font-size:1.6rem">Votre français, votre passeport pour le Canada.</p>
+          <cite>Globale Visa<span>Préparation TCF Canada &amp; immigration</span></cite>
+        </div>
       </div>
     </div>
   </div>
@@ -891,6 +1168,180 @@ footer .wrap{position:relative;z-index:2}
           <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Préparation à l'entretien</h3><p>Mises en situation pour aborder sereinement vos rendez-vous.</p></div></div>
         </div>
         <button class="btn btn-gold reveal" style="margin-top:28px" onclick="go('contact')">Discuter de mon projet
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VISA TRAVAIL ALLEMAGNE -->
+  <div class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="de-panel reveal" style="margin-bottom:40px">
+        <div class="de-flag"><i class="b"></i><i class="r"></i><i class="y"></i></div>
+        <div class="de-cap">
+          <span class="eyebrow light">Arbeiten in Deutschland</span>
+          <h3>Visa travail Allemagne</h3>
+          <p style="color:#c8d2f2;max-width:54ch;margin:14px auto 30px">Vous êtes un professionnel qualifié&nbsp;? Nous vous accompagnons pour saisir les opportunités de carrière en Allemagne, du dossier jusqu'à l'obtention de votre visa de travail.</p>
+        </div>
+      </div>
+      <div class="exam-grid">
+        <div class="exam reveal"><div class="ring"></div><div class="badge">Opportunités</div><h3>Carrières qualifiées</h3><p>Identification des secteurs qui recrutent et des voies adaptées à votre profil professionnel.</p></div>
+        <div class="exam reveal"><div class="ring"></div><div class="badge">Dossier</div><h3>Dossiers solides</h3><p>Constitution et vérification de chaque document pour un dossier crédible et complet.</p></div>
+        <div class="exam reveal"><div class="ring"></div><div class="badge">Visa</div><h3>Jusqu'au visa</h3><p>Un accompagnement de bout en bout jusqu'à l'obtention de votre visa de travail.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ GERMANPASS ============================================================ -->
+<section class="page" id="germanpass">
+  <div class="page-hero">
+    <svg class="lines" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1200" height="400" fill="url(#grid3)"/></svg>
+    <div class="wrap">
+      <div class="crumb">Accueil · GermanPass</div>
+      <svg class="gp-logo-lg" viewBox="0 0 340 80" role="img" aria-label="GermanPass">
+        <defs><clipPath id="gp-hero-shield"><path d="M10 18 Q10 8 24 8 L52 8 Q66 8 66 18 L66 42 Q66 60 38 72 Q10 60 10 42 Z"/></clipPath></defs>
+        <g clip-path="url(#gp-hero-shield)"><rect x="6" y="6" width="64" height="23" fill="#000000"/><rect x="6" y="29" width="64" height="20" fill="#DD0000"/><rect x="6" y="49" width="64" height="28" fill="#FFCE00"/></g>
+        <path d="M22 39 L33 50 L54 27" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="82" y="53" font-family="'Hanken Grotesk',Arial,sans-serif" font-weight="800" font-size="40"><tspan fill="#ffffff">German</tspan><tspan fill="#ff6b6b">Pass</tspan></text>
+      </svg>
+      <h1>Votre réussite à l'examen d'allemand, en une seule plateforme</h1>
+      <p>GermanPass est la plateforme tout-en-un de Globale Visa pour apprendre, s'entraîner et progresser jusqu'à l'examen : cours du niveau A1 au C2, entraînement aux quatre compétences avec correction par intelligence artificielle, et suivi personnalisé de votre progression.</p>
+      <div class="hero-actions" style="margin-top:30px">
+        <button class="btn btn-gold" onclick="go('contact')">Demander un accès
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="btn btn-light" onclick="go('formations')">Voir nos formations</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPRENDRE & S'ENTRAÎNER -->
+  <div class="section">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Apprendre &amp; s'entraîner</span>
+        <h2>Deux espaces, un seul objectif : l'examen</h2>
+        <p class="lead">Des leçons structurées pour assimiler, des sessions d'entraînement réalistes pour performer le jour J.</p>
+      </div>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <h3>Lernen — Les cours</h3>
+          <p>Des leçons claires par niveau, de A1 à C2, avec exercices intégrés et supports audio. Mode hors-ligne avec synchronisation : apprenez partout, même sans connexion.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
+          <h3>Üben — L'entraînement</h3>
+          <p>Des sessions Lesen, Hören, Schreiben et Sprechen avec correction par IA, génération de sujets à la demande, chronomètre intégré et feedback multilingue pour comprendre chaque erreur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUATRE COMPÉTENCES -->
+  <div class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Entraînement complet</span>
+        <h2>Les quatre compétences, corrigées par IA</h2>
+        <p class="lead">Chaque session reproduit les conditions de l'examen et vous renvoie un feedback détaillé et personnalisé.</p>
+      </div>
+      <div class="gp-skills">
+        <div class="gp-skill reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><div class="de">Lesen</div><div class="fr">Compréhension écrite</div><p>Textes calibrés par niveau et questions corrigées automatiquement.</p></div>
+        <div class="gp-skill reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span><div class="de">Hören</div><div class="fr">Compréhension orale</div><p>Audios authentiques et exercices d'écoute avec correction instantanée.</p></div>
+        <div class="gp-skill reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><div class="de">Schreiben</div><div class="fr">Expression écrite</div><p>Rédigez et recevez une correction IA : grammaire, structure, style.</p></div>
+        <div class="gp-skill reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg></span><div class="de">Sprechen</div><div class="fr">Expression orale</div><p>Entraînez votre oral et obtenez un retour ciblé sur votre production.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUIVI PERSONNALISÉ -->
+  <div class="section" style="background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow reveal">Suivi personnalisé</span>
+        <h2 class="reveal" style="margin-bottom:18px">Visualisez vos progrès, niveau après niveau</h2>
+        <p class="lead reveal" style="margin-bottom:26px">Un tableau de bord clair affiche vos graphiques de progression et votre score moyen par compétence et par type de tâche. Les niveaux se débloquent par paliers, dès 70&nbsp;% de score moyen atteint.</p>
+        <div class="why-list">
+          <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Graphiques de progression</h3><p>Suivez votre évolution dans le temps, compétence par compétence.</p></div></div>
+          <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Score moyen détaillé</h3><p>Par compétence et par type de tâche, pour cibler vos points faibles.</p></div></div>
+          <div class="why-item reveal"><span class="chk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Déblocage par paliers</h3><p>Atteignez 70&nbsp;% de score moyen pour accéder au niveau suivant.</p></div></div>
+        </div>
+      </div>
+      <div class="gp-dash reveal">
+        <h4>Tableau de bord — Niveau B1</h4>
+        <div class="sub">Score moyen par compétence</div>
+        <div class="gp-bar"><div class="row"><span>Lesen</span><span>82&nbsp;%</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+        <div class="gp-bar"><div class="row"><span>Hören</span><span>76&nbsp;%</span></div><div class="track"><div class="fill" style="width:76%"></div></div></div>
+        <div class="gp-bar"><div class="row"><span>Schreiben</span><span>68&nbsp;%</span></div><div class="track"><div class="fill" style="width:68%"></div></div></div>
+        <div class="gp-bar locked"><div class="row"><span>Sprechen — à consolider</span><span>61&nbsp;%</span></div><div class="track"><div class="fill" style="width:61%"></div></div></div>
+        <div class="gp-ring">
+          <div class="big">72<span>%</span></div>
+          <small>Score moyen global — encore 3 points avant de débloquer le niveau B2.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFIL D'EXAMEN -->
+  <div class="section">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Profil d'examen</span>
+        <h2>Une plateforme qui s'adapte à votre objectif</h2>
+        <p class="lead">Déclarez votre examen cible et votre niveau visé : les contenus et les sélecteurs d'entraînement s'ajustent automatiquement à votre parcours.</p>
+      </div>
+      <div class="hero-trust" style="justify-content:center;margin-top:8px">
+        <span style="color:var(--muted);font-weight:600">Examens pris en charge :</span>
+        <span class="pill" style="background:var(--gold-soft);color:var(--navy);border:1px solid var(--line)">Goethe</span>
+        <span class="pill" style="background:var(--gold-soft);color:var(--navy);border:1px solid var(--line)">telc</span>
+        <span class="pill" style="background:var(--gold-soft);color:var(--navy);border:1px solid var(--line)">ÖSD</span>
+        <span class="pill" style="background:var(--gold-soft);color:var(--navy);border:1px solid var(--line)">ECL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCÈS & PLANS -->
+  <div class="section" style="background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Accès &amp; abonnement</span>
+        <h2>Un accès simple, géré de bout en bout</h2>
+        <p class="lead">Choisissez la formule adaptée à votre projet. Accès géré par abonnement, avec codes promo et suivi administratif complet.</p>
+      </div>
+      <div class="plan-grid">
+        <div class="plan reveal">
+          <span class="ptag">Essai</span>
+          <h3>TRIAL</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Découverte des cours et de l'entraînement</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Accès limité dans le temps</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Idéal pour tester la plateforme</li>
+          </ul>
+        </div>
+        <div class="plan featured reveal">
+          <span class="ribbon">Recommandé</span>
+          <span class="ptag">Complet</span>
+          <h3>FULL</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Tous les cours A1 → C2</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Entraînement illimité aux 4 compétences</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Correction IA &amp; suivi personnalisé complet</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Abonnement avec date d'expiration &amp; codes promo</li>
+          </ul>
+        </div>
+      </div>
+      <p class="center" style="color:var(--muted);font-size:.9rem;max-width:60ch;margin:30px auto 0">Côté coulisses, un espace d'administration permet le suivi des indicateurs clés (KPIs) et la gestion des utilisateurs et des accès.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="wrap" style="padding:96px 28px">
+    <div class="cta-band reveal">
+      <svg class="lines" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1200" height="300" fill="url(#grid2)"/></svg>
+      <div class="inner">
+        <div><h2>Prêt à préparer votre examen avec GermanPass ?</h2><p>Contactez Globale Visa pour obtenir votre accès et commencer dès aujourd'hui.</p></div>
+        <button class="btn btn-gold" onclick="go('contact')">Demander un accès
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
     </div>
@@ -950,16 +1401,14 @@ footer .wrap{position:relative;z-index:2}
           <div class="map"><div class="pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div></div>
           <div class="body">
             <h3>Centre de Tsinga</h3>
-            <!-- ADRESSE EXACTE À COMPLÉTER -->
-            <p class="addr"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tsinga, Yaoundé, Cameroun (adresse précise à compléter)</p>
+            <p class="addr"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tsinga, Ancienne Mairie — Yaoundé, Cameroun</p>
           </div>
         </div>
         <div class="center-card reveal">
           <div class="map"><div class="pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div></div>
           <div class="body">
             <h3>Centre de Jouvence</h3>
-            <!-- ADRESSE EXACTE À COMPLÉTER -->
-            <p class="addr"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jouvence, Yaoundé, Cameroun (adresse précise à compléter)</p>
+            <p class="addr"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jouvence, 100 m avant la station Total — Yaoundé, Cameroun</p>
           </div>
         </div>
       </div>
@@ -995,13 +1444,13 @@ footer .wrap{position:relative;z-index:2}
       <div class="contact-info">
         <span class="eyebrow reveal">Nos coordonnées</span>
         <h2 class="reveal" style="font-size:1.9rem;margin-bottom:8px">Parlons de votre projet</h2>
-        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><div class="lbl">Téléphone / WhatsApp (Cameroun)</div><div class="val"><a href="tel:+237650719793">+237 650 719 793</a></div></div></div>
+        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><div class="lbl">Téléphone / WhatsApp (Cameroun)</div><div class="val"><a href="tel:+237694264222">+237 694 26 42 22</a></div><div class="val" style="font-size:.95rem"><a href="tel:+237650641157">+237 650 64 11 57</a></div></div></div>
         <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><div class="lbl">Téléphone (Allemagne)</div><div class="val"><a href="tel:+4915214083163">+49 152 14083163</a></div></div></div>
-        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span><div><div class="lbl">Email</div><div class="val"><a href="mailto:contact@globalevisa.cm">contact@globalevisa.cm</a></div></div></div>
-        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><div class="lbl">Nos centres</div><div class="val" style="font-size:.98rem">Tsinga &amp; Jouvence, Yaoundé, Cameroun</div></div></div>
+        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span><div><div class="lbl">Email</div><div class="val"><a href="mailto:contact@globalevisagroup.com">contact@globalevisagroup.com</a></div></div></div>
+        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span><div><div class="lbl">Site web</div><div class="val"><a href="https://globalevisagroup.com" target="_blank" rel="noopener">globalevisagroup.com</a></div></div></div>
+        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><div class="lbl">Centre de Tsinga</div><div class="val" style="font-size:.98rem">Tsinga, Ancienne Mairie — Yaoundé</div></div></div>
+        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><div class="lbl">Centre de Jouvence</div><div class="val" style="font-size:.98rem">Jouvence, 100 m avant la station Total — Yaoundé</div></div></div>
         <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><div class="lbl">Horaires des cours</div><div class="val" style="font-size:.98rem">Le matin et le soir, horaires variables</div></div></div>
-        <div class="ci-item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="lbl">Encadrement</div><div class="val" style="font-size:.98rem">Un Lehrer (enseignant principal) et un Betreuer (encadreur)</div></div></div>
-        <!-- ↑↑↑ COORDONNÉES À COMPLÉTER ↑↑↑ -->
       </div>
 
       <!-- FORMULAIRE -->
@@ -1016,7 +1465,11 @@ footer .wrap{position:relative;z-index:2}
         <div class="field"><label for="f-service">Je suis intéressé·e par</label>
           <select id="f-service">
             <option>Cours d'allemand (A1 à C1)</option>
-            <option>Préparation à un examen (Goethe / telc / TestDaF)</option>
+            <option>Accès à la plateforme GermanPass</option>
+            <option>Préparation à un examen (Goethe / telc / ÖSD)</option>
+            <option>Préparation au TCF Canada</option>
+            <option>Accompagnement études &amp; bourses à l'étranger</option>
+            <option>Visa travail Allemagne</option>
             <option>Accompagnement immigration / visa</option>
             <option>Cours en ligne</option>
             <option>Un test de niveau gratuit</option>
@@ -1051,7 +1504,7 @@ footer .wrap{position:relative;z-index:2}
             <circle cx="39.5" cy="14.5" r="3.6" fill="#f3b50b"/></svg></span>
           <span class="brand-text"><span class="g">GLOBALE</span> <span class="v">VISA</span></span>
         </div>
-        <p>Centre de langues &amp; immigration à Yaoundé. Votre passerelle vers l'Allemagne.</p>
+        <p>Centre de langues &amp; immigration à Yaoundé. Votre avenir sans frontières : Allemagne, Canada, France, Chine.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2.1 1.4C1.3 2.7.9 3.3.6 4.1.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2.1.7.7 1.3 1.1 2.1 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2.1-1.4.7-.7 1.1-1.3 1.4-2.1.3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2.1-.7-.7-1.3-1.1-2.1-1.4-.7-.3-1.6-.5-2.9-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.4 1.4 0 1 1-2.9 0 1.4 1.4 0 0 1 2.9 0z"/></svg></a>
@@ -1062,22 +1515,26 @@ footer .wrap{position:relative;z-index:2}
         <h4>Navigation</h4>
         <a onclick="go('accueil')">Accueil</a>
         <a onclick="go('formations')">Formations</a>
+        <a onclick="go('germanpass')">GermanPass</a>
         <a onclick="go('apropos')">À propos</a>
         <a onclick="go('contact')">Contact</a>
       </div>
       <div class="foot-col">
-        <h4>Formations</h4>
-        <a onclick="go('formations')">Cours A1 à C1</a>
-        <a onclick="go('formations')">Goethe-Zertifikat</a>
-        <a onclick="go('formations')">telc &amp; TestDaF</a>
-        <a onclick="go('formations')">Immigration &amp; visa</a>
+        <h4>Programmes</h4>
+        <a onclick="go('formations')">Cours d'allemand A1 à C1</a>
+        <a onclick="go('germanpass')">GermanPass — plateforme en ligne</a>
+        <a onclick="go('formations')">Préparation TCF Canada</a>
+        <a onclick="go('formations')">Visa travail Allemagne</a>
+        <a onclick="go('formations')">Études &amp; bourses à l'étranger</a>
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
-        <p>+237 650 719 793</p>
-        <p>+49 152 14083163</p>
-        <p>contact@globalevisa.cm</p>
-        <p>Tsinga &amp; Jouvence, Yaoundé</p>
+        <p>+237 694 26 42 22</p>
+        <p>+237 650 64 11 57</p>
+        <p>+49 152 14083163 (Allemagne)</p>
+        <p><a href="mailto:contact@globalevisagroup.com">contact@globalevisagroup.com</a></p>
+        <p><a href="https://globalevisagroup.com" target="_blank" rel="noopener">globalevisagroup.com</a></p>
+        <p>Tsinga (Ancienne Mairie) &amp; Jouvence (avant la Total), Yaoundé</p>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1094,9 +1551,23 @@ footer .wrap{position:relative;z-index:2}
 
 <script>
 /* Numéro WhatsApp (Cameroun), format international sans + ni espaces */
-const WHATSAPP = "237650719793";
+const WHATSAPP = "237694264222";
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ====== Bandeau promo : compte à rebours auto-expirant ====== */
+(function(){
+  const DEADLINE = new Date('2026-06-30T23:59:59'); // modifier ou supprimer pour retirer l'offre
+  const bar = document.getElementById('promoBar');
+  const now = new Date();
+  if(now > DEADLINE){ document.body.classList.add('no-promo'); return; }
+  const days = Math.ceil((DEADLINE - now)/86400000);
+  const cd = document.getElementById('promoCd');
+  cd.textContent = days > 1 ? ('J‑'+days) : (days === 1 ? "Dernier jour !" : "Aujourd'hui !");
+  if(days <= 1) cd.style.background = '#b91c1c';
+  document.getElementById('promoClose').addEventListener('click', ()=> document.body.classList.add('no-promo'));
+})();
+
 document.getElementById('waFloat').href =
   "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour Globale Visa, je souhaite avoir des informations.");
 
